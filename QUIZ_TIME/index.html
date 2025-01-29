@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Quiz App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="quiz-heading">
+    <h1>QUIZ TIME!</h1>
+  </div>
+
+  <div id="quiz-container">
+    <!-- Category Selection -->
+    <div id="category-selection">
+      <h2>Select Your Area of Interest</h2>
+      <select id="category-select">
+        <option value="9">General Knowledge</option>
+        <option value="18">Science: Computers</option>
+        <option value="17">Science: Nature</option>
+        <option value="23">History</option>
+        <option value="11">Entertainment: Film</option>
+        <option value="12">Entertainment: Music</option>
+        <option value="21">Sports</option>
+        <option value="22">Geography</option>
+        <option value="20">Mythology</option>
+      </select>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Questions -->
+    <div id="quiz-questions" style="display: none;">
+      <div id="question-container">
+        <p id="question-text"></p>
+        <ul id="options-list"></ul>
+      </div>
+      <button id="next-button" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result-container" style="display: none;">
+      <h2>Quiz Finished!</h2>
+      <p>Your score: <span id="score">0</span>/10</p>
+      <div id="answer-summary"></div>
+      <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
