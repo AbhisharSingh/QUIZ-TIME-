@@ -15,7 +15,8 @@
     <!-- Category Selection -->
     <div id="category-selection">
       <h2>Select Your Area of Interest</h2>
-      <select id="category-select">
+      <label for="category-select" class="sr-only">Choose quiz category</label>
+      <select id="category-select" aria-label="Quiz category selection">
         <option value="9">General Knowledge</option>
         <option value="18">Science: Computers</option>
         <option value="17">Science: Nature</option>
@@ -26,24 +27,24 @@
         <option value="22">Geography</option>
         <option value="20">Mythology</option>
       </select>
-      <button onclick="startQuiz()">Start Quiz</button>
+      <button onclick="startQuiz()" aria-label="Start the quiz with selected category">Start Quiz</button>
     </div>
 
     <!-- Quiz Questions -->
-    <div id="quiz-questions" style="display: none;">
+    <div id="quiz-questions" style="display: none;" role="main" aria-live="polite">
       <div id="question-container">
-        <p id="question-text"></p>
-        <ul id="options-list"></ul>
+        <p id="question-text" role="heading" aria-level="3"></p>
+        <ul id="options-list" role="list" aria-label="Answer options"></ul>
       </div>
-      <button id="next-button" onclick="nextQuestion()">Next</button>
+      <button id="next-button" onclick="nextQuestion()" disabled aria-label="Go to next question">Next</button>
     </div>
 
     <!-- Result Section -->
-    <div id="result-container" style="display: none;">
+    <div id="result-container" style="display: none;" role="main" aria-live="polite">
       <h2>Quiz Finished!</h2>
-      <p>Your score: <span id="score">0</span>/10</p>
-      <div id="answer-summary"></div>
-      <button onclick="restartQuiz()">Restart Quiz</button>
+      <p>Your score: <span id="score" aria-label="Final score">0</span>/10</p>
+      <div id="answer-summary" aria-label="Quiz results summary"></div>
+      <button onclick="restartQuiz()" aria-label="Start a new quiz">Restart Quiz</button>
     </div>
   </div>
 
